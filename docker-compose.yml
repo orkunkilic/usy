@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  weba:
+    build: ./nodejs
+    container_name: weba
+    ports:
+      - 5555:5555
+
+  webb:
+    build: ./flask
+    container_name: webb
+    ports:
+      - 4444:4444
+
+  haproxy:
+    build: ./haproxy
+    container_name: haproxy
+    ports:
+    - "8888:80"
